@@ -1,2 +1,2 @@
 # fretboard-memory-game
-Project by Brandon Garcia
+This project is a game made for guitarists that will help them learn the notes on the instrument's fretboard. 
