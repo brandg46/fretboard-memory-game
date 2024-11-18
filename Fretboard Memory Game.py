@@ -16,3 +16,6 @@ BLUE = (0, 0, 255)
 
 standard_tuning = ['E', 'A', 'D', 'G', 'B', 'E']
 notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
+
+font = pygame.font.SysFont('Arial', FONT_SIZE)
+small_font = pygame.font.SysFont('Arial', 24)
