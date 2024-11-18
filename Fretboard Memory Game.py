@@ -19,3 +19,11 @@ notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 
 font = pygame.font.SysFont('Arial', FONT_SIZE)
 small_font = pygame.font.SysFont('Arial', 24)
+
+def get_note_on_fret(string, fret):
+    starting_note = standard_tuning[string]
+    start_index = notes.index(starting_note)
+    note_index = (start_index + fret) % len(notes)
+    return notes[note_index]
+
+    
