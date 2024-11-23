@@ -23,6 +23,13 @@ FRET_COUNT, STRING_COUNT = 12, 6
 FRET_WIDTH, STRING_SPACING = 50, 40
 FRETBOARD_X, FRETBOARD_Y = 100, 300
 
+def get_note(string, fret):
+    start_index = notes.index(standard_tuning[string])
+    return notes [(start_index + fret) % len(notes)]
 
+def draw_fretboard(highlight_string, highlight_fret):
+    fretboard_w = FRET_COUNT * FRET_WIDTH
+    fretboard_h = (STRING_COUNT - 1) * STRING_SPACING + STRING_SPACING
+    pygame.draw.rect(screen, wood_color, (FRETBOARD_X, FRETBOARD_Y, fretboard_w, fretboard_h))
 
     
