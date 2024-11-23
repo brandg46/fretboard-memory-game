@@ -4,26 +4,25 @@ import sys
 
 pygame.init()
 
-WIDTH, HEIGHT = 800, 600 
-FPS = 60 
-FONT_SIZE = 36
+SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600 
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption("Guitar Fretboard Quiz")
 
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-GREEN = (0, 255, 0)
-RED = (255, 0, 0)
-BLUE = (0, 0, 255)
+wood_color = (155, 94, 81)
+black = (30, 30, 30)
+blue_font = (0, 102, 255)
+black, white, red, gray = (0, 0, 0), (255, 255, 255), (255, 0, 0), (200, 200, 200)
 
 standard_tuning = ['E', 'A', 'D', 'G', 'B', 'E']
 notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 
-font = pygame.font.SysFont('Arial', FONT_SIZE)
-small_font = pygame.font.SysFont('Arial', 24)
+font = pygame.font.SysFont('Arial', 34)
+small_font = pygame.font.SysFont('Arial', 22)
 
-def get_note_on_fret(string, fret):
-    starting_note = standard_tuning[string]
-    start_index = notes.index(starting_note)
-    note_index = (start_index + fret) % len(notes)
-    return notes[note_index]
+FRET_COUNT, STRING_COUNT = 12, 6
+FRET_WIDTH, STRING_SPACING = 50, 40
+FRETBOARD_X, FRETBOARD_Y = 100, 300
+
+
 
     
