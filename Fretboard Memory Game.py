@@ -32,6 +32,20 @@ def draw_fretboard(highlight_string, highlight_fret):
     fretboard_h = (STRING_COUNT - 1) * STRING_SPACING + STRING_SPACING
     pygame.draw.rect(screen, wood_color, (FRETBOARD_X, FRETBOARD_Y, fretboard_w, fretboard_h))
 
+    for i in range(STRING_COUNT):
+        y = FRETBOARD_Y + i * STRING_SPACING
+        pygame.draw.line(screen, black, (FRETBOARD_X, y), (FRETBOARD_X + fretboard_w, y), 2)
+        screen.blit(small_font.render(standard_tuning[i], True, blue_font), (FRETBOARD_X - 40, y - 12))
+
+    for i in range (FRET_COUNT + 1):
+        x = FRETBOARD_X + i * FRET_WIDTH
+        pygame.draw.line(screen, black, (x, FRETBOARD_Y), (x, FRETBOARD_Y + fretboard_h), 2)
+        
+    for fret in [3, 5, 7, 9, 12]:
+        x = FRETBOARD_X + i * FRET_WIDTH - FRET_WIDTH // 2
+        y = FRETBOARD_Y = fretboard_h // 2
+        pygame.draw.circle(screen, gray, (x, y), 5)
+
     score, attempts = 0, 0
     user_guess = ""
     string, fret = random.randint(0, 5), random.randint(0,12)
