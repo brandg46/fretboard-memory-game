@@ -52,12 +52,18 @@ def draw_fretboard(highlight_string, highlight_fret):
     correct_note = get_note(string, fret)
     clock = pygame.time.Clock()
 
-    running = True 
-    while running: 
-        screen.fill(black)
+score, attempts = 0, 0
+user_guess = ""
+string, fret = random.randint(0, 5), random.randint(0, 12)
+correct_note = get_note(string, fret)
+clock = pygame.time.Clock()
+ 
+running = True
+while running: 
+    screen.fill(black_background)
         
-        screen.blit(font.render(f"Guess the note on string {6 - string} at fret {fret}", True, blue_font), (50, 50))
-        screen.blit(font.render(f"Your guess: {user_guess}", True, blue_font), (50, 150))      
-        screen.blit(font.render(f"Score: {score}/{attempts}", True, blue_font), (50, 250))
+    screen.blit(font.render(f"Guess the note on string {6 - string} at fret {fret}", True, blue_font), (50, 50))
+    screen.blit(font.render(f"Your guess: {user_guess}", True, blue_font), (50, 150))      
+    screen.blit(font.render(f"Score: {score}/{attempts}", True, blue_font), (50, 250))
 
         draw_fretboard(string, fret)
