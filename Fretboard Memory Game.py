@@ -6,14 +6,14 @@ pygame.init()
 
 SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption("Guitar Fretboard Quiz")
+pygame.display.set_caption("Guitar Notes Game")
 
 wood_color = (155, 94, 81)
-black = (30, 30, 30)
+black_background = (30, 30, 30)
 blue_font = (0, 102, 255)
 black, white, red, gray = (0, 0, 0), (255, 255, 255), (255, 0, 0), (200, 200, 200)
 
-standard_tuning = ['E', 'A', 'D', 'G', 'B', 'E']
+standard_tuning = ['E', 'B', 'G', 'D', 'A', 'E']
 notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 
 font = pygame.font.SysFont('Arial', 34)
