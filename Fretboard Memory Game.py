@@ -66,4 +66,31 @@ while running:
     screen.blit(font.render(f"Your guess: {user_guess}", True, blue_font), (50, 150))      
     screen.blit(font.render(f"Score: {score}/{attempts}", True, blue_font), (50, 250))
 
-        draw_fretboard(string, fret)
+
+    draw_fretboard(string, fret)
+
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RETURN and user_guess: 
+                attempts += 1
+                if user_guess.upper() == correct_note:
+                    score += 1
+                string, fret = random.randint(0, 5), random.randint(0, 12)
+                correct_note = get_note(string, fret)
+                user_guess = ""
+            elif event.key == pygame.K_BACKSPACE:
+                user_guess = user_guess[:-1]
+            else: 
+                user_guess += event.unicode.upper()
+
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+sys.exit()
+
+        
+       
